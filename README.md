@@ -61,7 +61,7 @@ and stablish their dependencies with each other
 
 ### Mapping
 
-Additional it could be the case where not all the projects use the same target branch, then the mapping should be also specified for those projects. Let's suppose all the projects from the previous example use `main` as target branch but `kiegroup/lienzo-tests` uses `main`.
+Additional it could be the case where not all the projects use the same target branch, then the mapping should be also specified for those projects. Let's suppose all the projects from the previous example use `main` as target branch but `kiegroup/lienzo-tests` uses `development`.
 
 ```
 - project: kiegroup/lienzo-core
@@ -71,11 +71,11 @@ Additional it could be the case where not all the projects use the same target b
   mapping:
     dependencies:
       default:
-        - source: main
+        - source: development
           target: main
     dependant:
       default:
-        - source: main
+        - source: development
           target: 7.x
 - project: kiegroup/droolsjbpm-build-bootstrap
 - project: kiegroup/drools
@@ -83,7 +83,7 @@ Additional it could be the case where not all the projects use the same target b
     - project: kiegroup/lienzo-tests
 ```
 
-Each project should define its mapping. So in this case `kiegroup/lienzo-tests` defines it will map all dependencies from `main` to `main`, and `kiegroup/lienzo-tests` will be mapped from `main` to `main`.
+Each project should define its mapping. So in this case `kiegroup/lienzo-tests` defines it will map all dependencies from `main` to `main`, and `kiegroup/lienzo-tests` will be mapped from `development` to `main`.
 
 **Example:**
 
